@@ -11,6 +11,8 @@ import (
 	"time"
 )
 
+// handleEvent - Handle a webhook event and create a jira ticket.
+// ToDo: decouple this from the JIRA ticket so we can also allow other targets (e.g. slack)
 func handleEvent(eventID string, event WebhookEvent, jiraUser, jiraToken, jiraBaseURL, jiraProject *string) {
 	log.Printf("[EVENT %s] Processing event from camera %s", eventID, event.CameraID)
 

@@ -8,8 +8,12 @@ import (
 
 type Handler func(w http.ResponseWriter, r *http.Request)
 
+// WebhookHandlerFactory - Return a webhook handler function
 func WebhookHandlerFactory(authToken, jiraUser, jiraToken, jiraBaseURL, jiraProject *string) Handler {
+	// handler - handle webhook events.
 	return func(w http.ResponseWriter, r *http.Request) {
+
+		//Authenticate using a bearer token
 		auth := r.Header.Get("Authorization")
 		if auth != "Bearer "+(*authToken) {
 			http.Error(w, "Unauthorized", http.StatusUnauthorized)
@@ -28,6 +32,7 @@ func WebhookHandlerFactory(authToken, jiraUser, jiraToken, jiraBaseURL, jiraProj
 		}
 
 		eventID := uuid.New().String()
+		// asynchronously handle the event.
 		go handleEvent(eventID, event, jiraUser, jiraToken, jiraBaseURL, jiraProject)
 		w.WriteHeader(http.StatusAccepted)
 	}

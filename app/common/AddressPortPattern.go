@@ -7,6 +7,7 @@ import (
 	"strings"
 )
 
+// AddressPortPattern - ensure the input string follows <string>:<port number> pattern where port is 1-65535
 func AddressPortPattern(input string) string {
 	host, portStr, err := net.SplitHostPort(input)
 	if err != nil || strings.TrimSpace(host) == "" {
