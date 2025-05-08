@@ -12,6 +12,11 @@ Jira tickets, and uploads associated images.
 - Uploads event thumbnails as attachments
 - Fully containerized with a distroless production image
 
+## Docker image
+```bash
+docker pull ghcr.io/sam-caldwell/surveillance-proxy:latest
+```
+
 ## Requirements
 
 - Go 1.22+
