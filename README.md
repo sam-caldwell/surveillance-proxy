@@ -16,7 +16,7 @@ make docker
 
 ## Parameters
 ```shell
-RECVR_PORT=8080
+RECVR_ADDRESS=0.0.0.0:8080
 AUTH_TOKEN=your_webhook_token
 JIRA_USER=email@example.com
 JIRA_TOKEN=jira_api_token
