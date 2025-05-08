@@ -23,8 +23,6 @@ WORKDIR /app
 COPY . .
 
 RUN make build
-#RUN go mod tidy
-#RUN go build -o surveillance-proxy ./main
 
 
 # ─────────────────────────────────────────────────────────────
