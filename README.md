@@ -1,6 +1,7 @@
 # Surveillance Proxy
 
-A lightweight Go-based webhook server that receives alerts from Ubiquiti Dream Machine Pro Max, creates corresponding Jira tickets, and uploads associated images.
+A lightweight Go-based webhook server that receives alerts from Ubiquiti Dream Machine Pro Max, creates corresponding
+Jira tickets, and uploads associated images.
 
 ## Features
 
@@ -20,14 +21,14 @@ A lightweight Go-based webhook server that receives alerts from Ubiquiti Dream M
 
 ## Environment Variables
 
-| Name            | Description                         |
-|-----------------|-------------------------------------|
-| `RECVR_ADDRESS` | Listener address (e.g. `0.0.0.0:8080`) |
-| `AUTH_TOKEN`    | Bearer token required by sender     |
-| `JIRA_USER`     | Jira user email                     |
-| `JIRA_TOKEN`    | Jira API token                      |
+| Name            | Description                                             |
+|-----------------|---------------------------------------------------------|
+| `RECVR_ADDRESS` | Listener address (e.g. `0.0.0.0:8080`)                  |
+| `AUTH_TOKEN`    | Bearer token required by sender                         |
+| `JIRA_USER`     | Jira user email                                         |
+| `JIRA_TOKEN`    | Jira API token                                          |
 | `JIRA_BASE_URL` | Jira base URL (e.g. `https://yourdomain.atlassian.net`) |
-| `JIRA_PROJECT`  | Jira project key (e.g. `SRV`)       |
+| `JIRA_PROJECT`  | Jira project key (e.g. `SRV`)                           |
 
 ## Build
 
@@ -36,6 +37,7 @@ make clean build
 ```
 
 ## Run
+
 ```bash
 RECVR_ADDRESS=0.0.0.0:8080 AUTH_TOKEN=yourtoken \
 JIRA_USER=you@example.com JIRA_TOKEN=xxx \
@@ -45,11 +47,15 @@ JIRA_PROJECT=SRV \
 ```
 
 ## Docker
+
 Build the container:
+
 ```bash
 make docker
 ```
+
 Run it:
+
 ```bash
 docker run -p 8080:8080 \
   -e RECVR_ADDRESS=0.0.0.0:8080 \
@@ -61,6 +67,7 @@ docker run -p 8080:8080 \
   surveillance-proxy:latest
 ```
 
-## License 
+## License
+
 MIT
 
