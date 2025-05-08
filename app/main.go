@@ -12,7 +12,7 @@ func main() {
 
 	var (
 		recvAddress = common.AddressPortPattern(common.RequireEnv("RECVR_ADDRESS"))
-		authToken   = common.RequireEnv("AUTH_TOKEN")
+		authToken   = common.RequiredStringSize(64, common.RequireEnv("AUTH_TOKEN"))
 		jiraUser    = common.RequireEnv("JIRA_USER")
 		jiraToken   = common.RequireEnv("JIRA_TOKEN")
 		jiraBaseURL = common.RequireEnv("JIRA_BASE_URL")
